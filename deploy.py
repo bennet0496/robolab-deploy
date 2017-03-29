@@ -8,7 +8,7 @@ some imported modules, performs a reload on the main.py file in the
 /home/robot/src/ folder and starts execution from main.run().
 
 For usage, optional arguments, syntax, et cetera please run this file with the
-flag '--help', consult the README.md in the robolab-template repository or the
+flag '--help', consult the README_TEMPLATE.md in the robolab-template repository or the
 RoboLab Docs via the campus network of TU Dresden at
 http://robolab.inf.tu-dresden.de
 
