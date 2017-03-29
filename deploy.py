@@ -48,6 +48,7 @@ __status__ = 'Release'
 ROBOLAB_SERVER = 'http://robolab.inf.tu-dresden.de/files/'
 home = os.path.dirname(os.path.abspath(__file__))
 src_path = os.path.join(os.path.abspath(os.path.join(home, os.pardir)), 'src')
+res_path = os.path.join(os.path.abspath(os.path.join(home, os.pardir)), 'resources')
 settings_path = os.path.join(home, '.bin', 'settings.json')
 bin_path = os.path.join(home, '.bin')
 settings = dict()
@@ -98,6 +99,9 @@ class Windows:
     def copy_files():
         subprocess.call([os.path.join(bin_path, 'pscp.exe'), '-pw',
                          settings['password'], '-r', src_path,
+                         'robot@{ip}:/home/robot/'.format(ip=settings['ip'])])
+        subprocess.call([os.path.join(bin_path, 'pscp.exe'), '-pw',
+                         settings['password'], '-r', res_path,
                          'robot@{ip}:/home/robot/'.format(ip=settings['ip'])])
         print('Done')
 
