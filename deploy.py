@@ -170,6 +170,11 @@ https://gist.github.com/arunoda/7790979''')
                          os.path.join(src_path),
                          'robot@{}:/home/robot/'.format(
             settings['ip'])])
+        subprocess.call(['sshpass', '-p', settings['password'], 'scp', '-o',
+                         'StrictHostKeyChecking=no', '-r',
+                         os.path.join(res_path),
+                         'robot@{}:/home/robot/'.format(
+            settings['ip'])])
         print('Done')
 
     @staticmethod
